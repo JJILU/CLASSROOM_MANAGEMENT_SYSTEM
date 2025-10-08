@@ -17,18 +17,19 @@ def register_or_login_student():
 # ----- REGISTER OR LOGIN LECTURER  LOGIC ---
 @auth_bp.route("/register_lecturer", methods=["POST"])
 def register_lecturer():
-    pass
+    return "register lecture"
 
 @auth_bp.route("/login_lecturer", methods=["POST"])
 def login_lecturer():
-    pass
+   return "login lecture"
 
 # ----- REGISTER OR LOGIN STUDENT  LOGIC ----
 @auth_bp.route("/register_student", methods=["POST"])
 def register_student():
-    pass   
+    return "register student" 
 
 
 @auth_bp.route("/login_student", methods=["POST"])
-def login_student():
-    pass       
+def student_login():
+    return "login student" 
+      
