@@ -1,0 +1,85 @@
+{% extends 'auth/base.html' %}
+
+
+{% block content %}
+
+<div class="auth">
+  <div  class="container" id="container">
+    <div class="form-container sign-up-container">
+      <form id="auth-form-register" action="{{ url_for('auth.register_lecturer') }}" method="POST">
+        <!-- <h1>Create Account</h1> -->
+        <div class="social-container">
+          <h1>Create Account</h1>
+        </div>
+        <span>or use your email for registration</span>
+        <input type="text" name="lecturerid"  placeholder="Lecturer ID" required/>
+        <input type="text" name="password" placeholder="Password" required/>
+        <button onclick="setActionFormRegister()">Sign Up</button>
+      </form>
+    </div>
+    <div class="form-container sign-in-container">
+      <form id="auth-form-login" action="{{ url_for('auth.login_lecturer') }}" method="POST">
+        <h1>Sign in</h1>
+        <div class="social-container">
+        </div>
+        <span>or use your account</span>
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <a href="#">Forgot your password?</a>
+        <button onclick="setActionFormLogin()">SIGN IN</button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Lecturer Login</h1>
+          <p>Enter your Lecturer ID and Password to sign in and continue.</p>
+          <button class="ghost" id="signIn">Sign In</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Lecturer Signup</h1>
+          <p>Enter your Lecturer ID and Password to sign up and continue.</p>
+          <button class="ghost" id="signUp">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer>
+	<footer class="text-center mt-4">
+    <p>&copy; 2025 <i class="fa fa-heart"></i> by
+      <a target="_blank" href="https://florin-pop.com">Naomi Phiri</a>. All rights reserved.</p>
+  </footer>
+  
+</footer>
+
+<script src="{{ url_for('auth.static', filename='js/auth.js') }}">
+</script>
+
+
+<script>
+  
+  // REGISTER FORM
+  function setActionFormRegister() {
+    let form = document.getElementById("auth-form-register")
+
+    //  SET ATTRIBUTES ON REGISTER FORM
+    form.action = '{{ url_for("auth.register_lecturer")}}'
+    form.method = 'POST'
+    form.submit();
+   
+  }
+
+  // LOGIN FORM
+  function setActionFormLogin() {
+    let form = document.getElementById("auth-form-login")
+      form.action = '{{ url_for("auth.login_lecturer")}}'
+      form.method = 'POST'
+      form.submit();
+  }
+</script>
+
+  
+{% endblock content %}

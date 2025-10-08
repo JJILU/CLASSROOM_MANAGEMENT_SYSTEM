@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+  <ul>
+    <li><a href="{{ url_for("auth.register_or_login_lecturer") }}">Sign Up Or Sig In As Lecturer</a></li>
+  </ul>
+  <ul>
+    <li><a href="{{ url_for("auth.register_or_login_student") }}">Sign Up Or Sig In As Student</a></li>
+  </ul>
+  
+{% endblock content %}
