@@ -1,5 +1,92 @@
 {% extends 'dashboard/base.html' %}
 
 {% block content %}
-  dashboard
+<div class="container">
+  <aside>
+    <!-- top bar-->
+    <div class="top">
+      <!-- logo  -->
+      <div class="logo">
+        <img src="{{ url_for('dashboard.static', filename='assets/dashboard_images/logo.png') }}" alt="college logo">
+        <h2>CLASS<span class="danger">FLOW</span></h2>
+      </div>
+      <!-- close -->
+      <div class="close" id="close-btn">
+        <span class="material-symbols-sharp">
+          close
+        </span>
+      </div>
+    </div>
+
+    <!-- sidebar -->
+    <div class="sidebar">
+      <!-- dasbaord menu item -->
+      <a href="#">
+        <span class="material-symbols-sharp">
+          grid_view
+        </span>
+        <h3>Dashboard</h3>
+      </a>
+
+       <!-- lecturer menu item -->
+       <a href="#">
+        <span class="material-symbols-sharp">
+          school
+        </span>
+        <h3>Lecturers</h3>
+      </a>
+
+      <!-- students menu item -->
+      <a href="#">
+        <span class="material-symbols-sharp">
+          group
+        </span>
+        <h3>Students</h3>
+      </a>
+
+
+      <!-- attendance menu item -->
+      <a href="#">
+        <span class="material-symbols-sharp">
+          punch_clock
+        </span>
+        <h3>Attendance</h3>
+      </a>
+
+
+      <!-- grading menu item -->
+      <a href="#">
+        <span class="material-symbols-sharp">
+          grading
+        </span>
+        <h3>Grading</h3>
+      </a>
+
+       <!-- email menu item -->
+       <a href="#">
+        <span class="material-symbols-sharp">
+          mail
+        </span>
+        <h3>Mail</h3>
+        <spa class="mail-count"></spa>
+      </a>
+
+      <!-- settings menu item -->
+      <a href="#">
+        <span class="material-symbols-sharp">
+          settings
+        </span>
+        <h3>Settings</h3>
+      </a>
+
+      <!-- settings menu item -->
+      <a href="#">
+        <span class="material-symbols-sharp">
+          logout
+        </span>
+        <h3>Logout</h3>
+      </a>
+    </div>
+  </aside>
+ </div> 
 {% endblock content %}

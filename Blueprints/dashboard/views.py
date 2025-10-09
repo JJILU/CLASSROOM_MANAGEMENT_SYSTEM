@@ -5,4 +5,4 @@ dashboard_bp = Blueprint("dashboard",__name__,template_folder="templates",static
 
 @dashboard_bp.route("/", methods=["GET"])
 def landing_page():
-    render_template("dashboard/landing_page.html")
+    return render_template("dashboard/dashboard.html")
